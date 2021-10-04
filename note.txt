@@ -1,0 +1,43 @@
+------Index Routes------
+export default function handler(req, res) {
+    res.status(200).json({ 'text': 'Hello' })
+}
+>>>>>localhost:3000/api
+
+------Nested Routes------
+export default function handler(req, res) {
+    res.status(200).json({ 'Name': 'Iphone' })
+}
+>>>>>localhost:3000/api/product
+
+export default function handler(req, res) {
+    res.status(200).json({ 'Name': 'Test' })
+}
+>>>>>localhost:3000/api/product/test
+
+------Dynamic route segments------
+export default function handler(req, res) {
+    const { id } = req.query
+    res.status(200).json({ 'Name': id })
+}
+export default function handler(req, res) {
+    const anc = req.query.id
+    console.log(req)
+    res.status(200).json({ 'Name': abc })
+}
+>>>>>localhost:3000/api/dynamic/123
+
+
+export default function handler(req, res) {
+    const abc = req.query.params
+    console.log(req)
+    res.status(200).json({ 'Param1': abc[0], 'Param2': abc[1], })
+}
+>>>>>localhost:3000/api/dynamic/all/123/456
+
+export default function handler(req, res) {
+    const abc = req.query.params
+    console.log(req)
+    res.status(200).json({ 'Param': abc })
+}
+>>>>>localhost:3000/api/dynamic/all/123/465/asd/000
